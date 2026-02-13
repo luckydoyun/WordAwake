@@ -1,0 +1,24 @@
+# server config
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Spring logging
+logging:
+  level:
+    root: INFO
+    com.springframework: INFO
+    com.wordawake: INFO
+    com.wordawake.gateway: DEBUG
+    org.apache.http: INFO
+    org.springframework.security: INFO
+
+# Spring config
+spring:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+  profiles:
+    active: local
