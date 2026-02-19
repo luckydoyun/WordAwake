@@ -1,0 +1,3 @@
+# embedded 프로필 시 내장 Kafka 기동 (ApplicationContext 준비 전에 실행)
+org.springframework.context.ApplicationContextInitializer=\
+com.wordawake.gateway.config.EmbeddedKafkaInitializer

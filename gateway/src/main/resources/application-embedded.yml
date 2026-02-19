@@ -1,0 +1,11 @@
+# 프로필 embedded 전용 설정 (이 파일은 --spring.profiles.active=embedded 일 때만 로드됨).
+# EmbeddedKafkaInitializer가 컨텍스트 준비 시 내장 Kafka를 띄우고 bootstrap-servers 를 자동 설정.
+# 실행 예: ./gradlew bootRun --args='--spring.profiles.active=embedded'
+
+# Spring config
+
+# Spring logging
+logging:
+  config: classpath:logback-gateway-embedded.xml
+  file:
+    path: ./gateway/logs

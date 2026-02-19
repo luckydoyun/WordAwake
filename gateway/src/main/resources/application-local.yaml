@@ -1,7 +1,0 @@
-# Spring config
-
-# Spring logging
-logging:
-  config: classpath:logback-gateway-local.xml
-  file:
-    path: ./gateway/logs

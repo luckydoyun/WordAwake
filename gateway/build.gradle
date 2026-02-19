@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.wordawake'
-version = '0.0.1-SNAPSHOT'
+version = 'wordawake-0.0.1-SNAPSHOT'
 description = 'gateway'
 
 java {
@@ -28,12 +28,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-kafka'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.apache.kafka:kafka-streams'
+	// embedded 프로필에서 내장 Kafka 기동용 (별도 Kafka 서버 없이 로컬 실행)
+	implementation 'org.springframework.kafka:spring-kafka-test'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-websocket-test'
+	testImplementation 'org.eclipse.jetty.websocket:jetty-websocket-jetty-client'
+	testImplementation 'org.awaitility:awaitility'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// Google Gson (최신: 2.10.1)
+	implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 tasks.named('bootBuildImage') {
